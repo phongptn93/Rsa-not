@@ -1,0 +1,9 @@
+# generic version of Newton's method for the kth root of n
+# (integer approximation)
+def iroot(k, n):
+    x, y = n, n + 1
+    while x < y:
+        y = x
+        z = (k - 1) * y + (n // pow(y, k - 1))
+        x = z // k
+    return x
